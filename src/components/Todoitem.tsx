@@ -26,9 +26,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#cacaca',
     color: '#333',
     fontWeight: "bold",
-    flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
     maxWidth: 500,
   }
 })

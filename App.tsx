@@ -4,43 +4,42 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {Home} from "./src/views/home";
 
 export default function App() {
-    return (
-      <View style={styles.app}>
-          <View style={styles.header}> Header </View>
-          <ScrollView>
-              <View style={styles.container}>
-                  <Home/>
-                  <Text style={styles.text}>Open up App.tsx to start working on your app!</Text>
-                  <StatusBar style="auto"/>
-              </View>
-          </ScrollView>
-      </View>
-    );
+  return (
+    <View style={styles.app}>
+      <StatusBar style='light'/>
+      <View style={styles.header}><Text style={styles.headerText}>header</Text></View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Home/>
+        </View>
+      </ScrollView>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    app: {
-        fontFamily: 'sans-serif',
-        flex: 1,
-        flexDirection: "column"
-    },
-    container: {
-        flex: 1,
-        backgroundColor: '#100',
-        color: 'red',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    text: {
-        color: '#fafafa',
-    },
-    header: {
-        paddingTop: 10,
-        paddingBottom: 10,
-        backgroundColor: '#2A3550',
-        textAlign: "center",
-        color: '#fafafa',
-        fontWeight: "bold",
-        fontSize: 18
-    }
+  app: {
+    backgroundColor: '#222',
+    height: '100%',
+    borderBottomWidth: 30,
+    borderColor: 'red'
+  },
+  container: {
+    color: 'red',
+    justifyContent: 'center',
+  },
+  text: {
+    color: '#fafafa',
+  },
+  header: {
+    paddingTop: 48  ,
+    paddingBottom: 10,
+    backgroundColor: '#2A3550',
+  },
+  headerText: {
+    textAlign: "center",
+    color: '#fafafa',
+    fontWeight: "bold",
+    fontSize: 18
+  }
 });
