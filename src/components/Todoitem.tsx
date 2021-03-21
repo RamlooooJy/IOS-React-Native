@@ -1,5 +1,5 @@
-import React from "react";
-import {ListRenderItem, SafeAreaView, StyleSheet, Text, View} from "react-native";
+import React from 'react';
+import { Button, ListRenderItem, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 export interface TodoItemI {
   id: number,
@@ -8,14 +8,20 @@ export interface TodoItemI {
   completed: boolean
 }
 
-export const TodoItem: React.FC<{data: TodoItemI}> = ({data}) => {
-  return <SafeAreaView key={data.title} style={styles.item}>
-    <Text>{data.id}</Text>
-    <View>
-      <Text>{data.title}</Text>
-    </View>
-  </SafeAreaView>
-}
+export const TodoItem: React.FC<{ data: TodoItemI, onCLickItem: (id: number) => void }> =
+  ({data, onCLickItem}) => {
+    const onClick = () => {
+      onCLickItem(data.id)
+    }
+    
+    return <SafeAreaView key={data.title} style={styles.item}>
+      <Text>{data.id}</Text>
+      <View>
+        <Text>{data.title}</Text>
+        <Button title={'delete'} color={'darkred'} onPress={onClick}/>
+      </View>
+    </SafeAreaView>
+  }
 
 const styles = StyleSheet.create({
   item: {
@@ -25,7 +31,7 @@ const styles = StyleSheet.create({
     borderColor: 'pink',
     backgroundColor: '#cacaca',
     color: '#333',
-    fontWeight: "bold",
-    maxWidth: 500,
+    fontWeight: 'bold',
+    maxWidth: 500
   }
 })
